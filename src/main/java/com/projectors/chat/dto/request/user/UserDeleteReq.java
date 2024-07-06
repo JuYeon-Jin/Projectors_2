@@ -1,4 +1,4 @@
-package com.projectors.chat.user.dto.request;
+package com.projectors.chat.dto.request.user;
 
 public class UserDeleteReq {
     /*

@@ -1,6 +1,6 @@
-package com.projectors.chat.user.dto.response;
+package com.projectors.chat.dto.request.user;
 
-public class UserRsp {
+public class UserCreateReq {
     /*
     user_id CHAR(36) PRIMARY KEY,
     username VARCHAR(80) NOT NULL,
@@ -16,13 +16,10 @@ public class UserRsp {
     FOREIGN KEY (grade_id) REFERENCES grade(grade_id)
     * */
 
-    // SELECT nickname, department_id, department_name, grade_id, grade_name FROM user WHERE user_id  = ?
-
-    // 유저 프로필
+    // INSERT INTO user (user_id, username, password, nickname) values (uuid(), '?', '?', '?')
+    // 회원 가입
+    String userName;
+    String password;
     String nickname;
-    int departmentId;
-    String departmentName;
-    int gradeId;
-    String gradeName;
 
 }

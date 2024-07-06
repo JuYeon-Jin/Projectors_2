@@ -1,8 +1,9 @@
-package com.projectors.chat.user.controller;
+package com.projectors.chat.controller.user;
 
 import com.projectors.chat.user.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -12,6 +13,11 @@ public class UserController {
 
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("/")
+    public void mainPage() {
+
     }
 
     @PostMapping("/login")
