@@ -1,6 +1,7 @@
 package com.projectors.chat.controller.user;
 
-import com.projectors.chat.user.service.UserService;
+
+import com.projectors.chat.service.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
