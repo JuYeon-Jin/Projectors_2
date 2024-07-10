@@ -17,7 +17,7 @@ public class UserService {
     }
 
     public boolean login(UserCreateReq dto) {
-        String userId = userDao.login(dto.getUserName(), dto.getPassword());
+        String userId = userDao.login(dto.getUsername(), dto.getPassword());
         if (userId == null || userId.trim().isEmpty()) {
             return false;
         }
@@ -26,7 +26,7 @@ public class UserService {
     }
 
     public boolean join(UserCreateReq dto) {
-        int isInsertedSuccessful = userDao.join(dto.getUserName(), dto.getPassword(), "신규가입자");
+        int isInsertedSuccessful = userDao.join(dto.getUsername(), dto.getPassword(), "신규가입자");
         return isInsertedSuccessful > 0;
     }
 }

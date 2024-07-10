@@ -40,6 +40,8 @@ public class UserController {
 
     @PostMapping("/join")
     public String join(UserCreateReq dto) {
+        System.out.println("dto.getUserName() = " + dto.getUsername());
+        System.out.println("dto.getPassword() = " + dto.getPassword());
         boolean isSuccessful = userService.join(dto);
         if (!isSuccessful) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "회원가입이 정상적으로 처리되지 않았습니다. 다시 시도해 주세요.");

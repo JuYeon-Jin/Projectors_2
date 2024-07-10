@@ -21,11 +21,11 @@ public class UserCreateReq {
 
     // INSERT INTO user (user_id, username, password, nickname) values (uuid(), '?', '?', '?')
     // 회원 가입
-    String userName;
+    String username;
     String password;
 
-    public UserCreateReq(String userName, String password) {
-        this.userName = userName;
+    public UserCreateReq(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 }

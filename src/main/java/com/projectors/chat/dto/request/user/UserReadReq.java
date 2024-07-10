@@ -18,7 +18,7 @@ public class UserReadReq {
 
     // SELECT user_id FROM user WHERE userName = ? AND password = ?
     // 로그인
-    String userName;
+    String username;
     String password;
 
 }
