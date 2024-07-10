@@ -17,13 +17,18 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public void mainPage() {
-
+    public String mainPage() {
+        return "/view/user/home";
     }
 
     @PostMapping("/login")
     public void login(Model model) {
 
+    }
+
+    @GetMapping("/join")
+    public String joinForm() {
+        return "/view/user/join";
     }
 
     @PostMapping("/join")
