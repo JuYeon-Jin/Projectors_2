@@ -1,5 +1,8 @@
 package com.projectors.chat.dto.request.user;
 
+import lombok.Getter;
+
+@Getter
 public class UserCreateReq {
     /*
     user_id CHAR(36) PRIMARY KEY,
@@ -20,6 +23,9 @@ public class UserCreateReq {
     // 회원 가입
     String userName;
     String password;
-    String nickname;
 
+    public UserCreateReq(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
 }

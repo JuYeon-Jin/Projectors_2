@@ -1,6 +1,7 @@
 package com.projectors.chat.controller.user;
 
 
+import com.projectors.chat.dto.request.user.UserCreateReq;
 import com.projectors.chat.service.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,18 +23,19 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public void login(Model model) {
-
+    public String login(Model model, UserCreateReq dto) {
+        userService.login(dto);
+        return "/view/project/home";
     }
 
     @GetMapping("/join")
-    public String joinForm() {
+    public String join() {
         return "/view/user/join";
     }
 
     @PostMapping("/join")
-    public void join() {
-
+    public String join(UserCreateReq dto) {
+        return "redirect:/";
     }
 
 }
