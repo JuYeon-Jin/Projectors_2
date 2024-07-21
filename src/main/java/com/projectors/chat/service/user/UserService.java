@@ -29,4 +29,5 @@ public class UserService {
         int isInsertedSuccessful = userDao.join(dto.getUsername(), dto.getPassword(), "신규가입자");
         return isInsertedSuccessful > 0;
     }
+
 }

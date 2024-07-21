@@ -25,12 +25,12 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(Model model, UserCreateReq dto) {
+    public String login(UserCreateReq dto) {
         boolean isSuccessful = userService.login(dto);
         if (!isSuccessful) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "입력하신 정보가 일치하지 않습니다. 확인 후 다시 로그인해 주세요.");
         }
-        return "/view/project/home";
+        return "forward:/main";
     }
 
     @GetMapping("/join")
@@ -40,8 +40,6 @@ public class UserController {
 
     @PostMapping("/join")
     public String join(UserCreateReq dto) {
-        System.out.println("dto.getUserName() = " + dto.getUsername());
-        System.out.println("dto.getPassword() = " + dto.getPassword());
         boolean isSuccessful = userService.join(dto);
         if (!isSuccessful) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "회원가입이 정상적으로 처리되지 않았습니다. 다시 시도해 주세요.");
